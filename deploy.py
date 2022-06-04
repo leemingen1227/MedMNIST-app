@@ -17,7 +17,7 @@ from medmnist.dataset import PathMNIST, ChestMNIST, DermaMNIST, OCTMNIST, Pneumo
 from medmnist.evaluator import getAUC, getACC, save_results
 from medmnist.info import INFO
 
-def predict(image_location = '/Users/lmn/MedMNIST-main/static/STR-TCGA-AAMALCER.jpg'):
+def predict(image_location = './static/STR-TCGA-AAMALCER.jpg'):
     flag = "pathmnist"
     index = 99
     auc = 0.99894
@@ -35,7 +35,7 @@ def predict(image_location = '/Users/lmn/MedMNIST-main/static/STR-TCGA-AAMALCER.
     dir_path = os.path.join('./output', '%s_checkpoints' % (flag))
     restore_model_path = os.path.join(dir_path, 'ckpt_%d_auc_%.5f.pth' % (index, auc))
 
-    model.load_state_dict(torch.load(restore_model_path)['net'])
+    model.load_state_dict(torch.load(restore_model_path, map_location= 'cpu')['net'])
     model.eval()
     #img = torchvision.io.read_image(image_location)
     img = PIL.Image.open(image_location)

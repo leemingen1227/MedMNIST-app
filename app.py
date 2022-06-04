@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, request
 from deploy import predict
 app = Flask(__name__)
-UPLOAD_FOLDER = "/Users/lmn/MedMNIST-main/static"
+UPLOAD_FOLDER = "./static"
 
 @app.route("/", methods=["GET", "POST"])
 def upload_predict():
