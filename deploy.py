@@ -1,8 +1,6 @@
 import os
 import argparse
 
-import torchvision.io
-from tqdm import trange
 import numpy as np
 import torch
 import torch.nn as nn
@@ -14,7 +12,6 @@ import PIL
 from medmnist.models import ResNet18, ResNet50
 from medmnist.dataset import PathMNIST, ChestMNIST, DermaMNIST, OCTMNIST, PneumoniaMNIST, RetinaMNIST, \
     BreastMNIST, OrganMNISTAxial, OrganMNISTCoronal, OrganMNISTSagittal
-from medmnist.evaluator import getAUC, getACC, save_results
 from medmnist.info import INFO
 
 def predict(image_location = './static/STR-TCGA-AAMALCER.jpg'):
