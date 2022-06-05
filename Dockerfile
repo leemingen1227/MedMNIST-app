@@ -10,3 +10,5 @@ ADD . /app
 # execute everyone's favorite pip command, pip install -r
 RUN pip install -r requirements.txt
 
+CMD python app.py
+
