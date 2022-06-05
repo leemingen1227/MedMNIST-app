@@ -96,7 +96,10 @@
       <img class="mb-4" src="/static/{{image_loc}}" alt="" width="256" height="256">
       <h3 class="h3 mb-3 fw-normal">Prediction:<br> {{prediction}}</h3>
     {%endif%}
-
+    {% if file_loc %}
+      <img class="mb-4" src="/static/path_test.png" alt="" width="256" height="256">
+      <h3 class="h5 mb-3 fw-normal">Auc: {{'%0.2f' % auc|float}}<br> Acc: {{'%0.2f' % acc|float}}</h3>
+    {%endif%}
     <p class="mt-5 mb-3 text-muted">&copy; 2022 Johnson Lee</p>
   </form>
 </main>

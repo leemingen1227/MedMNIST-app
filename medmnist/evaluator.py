@@ -90,3 +90,6 @@ def save_results(y_true, y_score, outputpath):
         df = pd.concat([df, df_insert], ignore_index=True)
 
     df.to_csv(outputpath, sep=',', index=False, header=True, encoding="utf_8_sig")
+
+if __name__ == "__main__":
+    print(pd.__version__)
